@@ -19,11 +19,18 @@ h1 {
     text-align: center;
 }
 
-#message {
-    color: white;
+#instructions-div {
+    height: 30px;
+    max-width: 600px;
+    background-color: white;
+    text-align: center;
+    margin: 0 auto;
 }
 
-#instructions-div {
-    max-width: 600px;
-    margin: 0 auto;
+button {
+    float: right;
+}
+
+#reset-btn {
+    float: left;
 }
