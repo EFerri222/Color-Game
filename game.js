@@ -1,22 +1,17 @@
 // Global variables
 var squares = document.querySelectorAll(".square");
-var correctSquare = squares[Math.floor(Math.random() * 6)];
+var correctSquare = squares[Math.floor(Math.random() * squares.length)];
 var rgbDisplay = document.querySelector("#rgb-display");
 var messageDisplay = document.querySelector("#message");
 var gameOver = false;
 
 // Create a random RGB value string
 function randomColor() {
-    function getRandomIntInclusive(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+    // Generate random integer between 0 and 255
+    function generateNumber() {
+        return Math.floor(Math.random() * 256);
     }
-    var red = getRandomIntInclusive(0,255);
-    var green = getRandomIntInclusive(0,255);
-    var blue = getRandomIntInclusive(0,255);
-
-    return "rgb(" + red + ", " + green + ", " + blue + ")";
+    return "rgb(" + generateNumber() + ", " + generateNumber() + ", " + generateNumber() + ")";
 }
 
 // Give each square a random background color
