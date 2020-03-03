@@ -18,3 +18,12 @@ h1 {
     color: white;
     text-align: center;
 }
+
+#message {
+    color: white;
+}
+
+#instructions-div {
+    max-width: 600px;
+    margin: 0 auto;
+}
