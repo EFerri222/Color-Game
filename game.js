@@ -29,7 +29,7 @@ function newColors() {
 newColors();
 
 // Display rgb value of the correct square in HTML
-rgbDisplay.textContent = correctSquare.style.backgroundColor.toUpperCase()
+rgbDisplay.textContent = correctSquare.style.backgroundColor;
 
 function addClickEvents() {
     // For each square...
@@ -62,7 +62,7 @@ addClickEvents();
 function newCorrectSquare() {
     correctSquare = squares[Math.floor(Math.random() * squares.length)];
     // Display rgb value of the correct square in HTML
-    rgbDisplay.textContent = correctSquare.style.backgroundColor.toUpperCase()
+    rgbDisplay.textContent = correctSquare.style.backgroundColor;
 }
 
 // Reset colors and pick a new correct square
@@ -70,7 +70,7 @@ function reset() {
     gameOver = false;
     newColors();
     newCorrectSquare();
-    h1.style.backgroundColor = "#232323";
+    h1.style.backgroundColor = "steelblue";
     resetBtn.textContent = "New Colors";
     messageDisplay.textContent = "";
 }
