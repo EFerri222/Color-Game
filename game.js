@@ -19,3 +19,18 @@ var squares = document.querySelectorAll(".square");
 for (var i = 0; i < squares.length; i++) {
     squares[i].style.backgroundColor = randomColor();
 }
+
+// Choose random number between 0 and 5
+var answerIndex = Math.floor(Math.random() * 6);
+
+// Choose correct square
+var correctSquare = squares[answerIndex];
+
+// Display rgb value of the correct square in HTML
+var rgbDisplay = document.querySelector("#rgb");
+rgbDisplay.textContent = squares[answerIndex].style.backgroundColor;
+
+// Alert correct when correct square is clicked
+correctSquare.addEventListener("click", function() {
+    alert("CORRECT!");
+});
