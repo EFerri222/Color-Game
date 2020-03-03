@@ -1,3 +1,5 @@
+var gameOver = false;
+
 // Create a random RGB value string
 function randomColor() {
     function getRandomIntInclusive(min, max) {
@@ -32,13 +34,16 @@ rgbDisplay.textContent = squares[answerIndex].style.backgroundColor.toUpperCase(
 
 for(var i = 0; i < squares.length ; i++){
     squares[i].addEventListener("click", function() {
-        // If incorrect square is clicked, it becomes the same color as the body
-        if(this != correctSquare) {
-            this.style.backgroundColor = "#232323"
-        // Otherwise make all the squares the correct color
-        } else {
-            for(var i = 0; i < squares.length ; i++){
-                squares[i].style.backgroundColor = correctSquare.style.backgroundColor;
+        if(!gameOver) {
+            // If incorrect square is clicked, it becomes the same color as the body
+            if(this != correctSquare) {
+                this.style.backgroundColor = "#232323"
+            // Otherwise make all the squares the correct color
+            } else {
+                for(var i = 0; i < squares.length ; i++){
+                    squares[i].style.backgroundColor = correctSquare.style.backgroundColor;
+                }
+                gameOver = true;
             }
         }
     })
