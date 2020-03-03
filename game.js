@@ -27,10 +27,19 @@ var answerIndex = Math.floor(Math.random() * 6);
 var correctSquare = squares[answerIndex];
 
 // Display rgb value of the correct square in HTML
-var rgbDisplay = document.querySelector("#rgb");
-rgbDisplay.textContent = squares[answerIndex].style.backgroundColor;
+var rgbDisplay = document.querySelector("#rgb-display");
+rgbDisplay.textContent = squares[answerIndex].style.backgroundColor.toUpperCase();
 
-// Alert correct when correct square is clicked
-correctSquare.addEventListener("click", function() {
-    alert("CORRECT!");
-});
+for(var i = 0; i < squares.length ; i++){
+    squares[i].addEventListener("click", function() {
+        // If incorrect square is clicked, it becomes the same color as the body
+        if(this != correctSquare) {
+            this.style.backgroundColor = "#232323"
+        // Otherwise make all the squares the correct color
+        } else {
+            for(var i = 0; i < squares.length ; i++){
+                squares[i].style.backgroundColor = correctSquare.style.backgroundColor;
+            }
+        }
+    })
+}
