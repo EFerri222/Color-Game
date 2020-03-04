@@ -6,7 +6,6 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetBtn = document.querySelector("#reset-btn");
 var easyBtn = document.querySelector("#easy-btn");
-var medBtn = document.querySelector("#med-btn");
 var hardBtn = document.querySelector("#hard-btn");
 var gameOver = false;
 
@@ -81,25 +80,8 @@ resetBtn.addEventListener("click", function() {
 
 easyBtn.addEventListener("click", function(){
     easyBtn.classList.add("selected");
-    medBtn.classList.remove("selected");
     hardBtn.classList.remove("selected");
     document.querySelector("#container").innerHTML =
-    "<div class=\"square\"></div>" +
-    "<div class=\"square\"></div>" +
-    "<div class=\"square\"></div>";
-    squares = document.querySelectorAll(".square");
-    reset();
-    addClickEvents();
-});
-
-medBtn.addEventListener("click", function(){
-    easyBtn.classList.remove("selected");
-    medBtn.classList.add("selected");
-    hardBtn.classList.remove("selected");
-    document.querySelector("#container").innerHTML =
-    "<div class=\"square\"></div>" +
-    "<div class=\"square\"></div>" +
-    "<div class=\"square\"></div>" +
     "<div class=\"square\"></div>" +
     "<div class=\"square\"></div>" +
     "<div class=\"square\"></div>";
@@ -110,12 +92,8 @@ medBtn.addEventListener("click", function(){
 
 hardBtn.addEventListener("click", function(){
     easyBtn.classList.remove("selected");
-    medBtn.classList.remove("selected");
-    hardBtn.classList.add("selected");
+    hardBtn.classList.remove("selected");
     document.querySelector("#container").innerHTML =
-    "<div class=\"square\"></div>" +
-    "<div class=\"square\"></div>" +
-    "<div class=\"square\"></div>" +
     "<div class=\"square\"></div>" +
     "<div class=\"square\"></div>" +
     "<div class=\"square\"></div>" +
