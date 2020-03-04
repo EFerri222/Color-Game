@@ -39,6 +39,8 @@ function addClickEvents() {
                 if(this !== correctSquare) {
                     this.style.backgroundColor = "#232323"
                     messageDisplay.textContent = "Try Again!";
+                    messageDisplay.classList.add("wrong");
+                    messageDisplay.classList.remove("correct");
                 // Otherwise make all the squares and h1 background the correct color
                 } else {
                     for(var i = 0; i < squares.length ; i++){
@@ -47,6 +49,8 @@ function addClickEvents() {
                     messageDisplay.textContent = "Correct!";
                     h1.style.backgroundColor = this.style.backgroundColor;
                     resetBtn.textContent = "Play Again?";
+                    messageDisplay.classList.add("correct");
+                    messageDisplay.classList.remove("wrong");
                     // Game is over
                     gameOver = true;
                 }
@@ -72,6 +76,8 @@ function reset() {
     h1.style.backgroundColor = "steelblue";
     resetBtn.textContent = "New Colors";
     messageDisplay.textContent = "";
+    messageDisplay.classList.remove("correct");
+    messageDisplay.classList.remove("wrong");
 }
 
 resetBtn.addEventListener("click", function() {

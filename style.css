@@ -32,7 +32,7 @@ h1 {
 }
 
 #instructions-div {
-    height: 30px;
+    height: 50px;
     background-color: white;
     text-align: center;
     margin: 0 auto;
@@ -41,6 +41,7 @@ h1 {
 button {
     border: none;
     background: none;
+    outline: none;
     font-family: "Montserrat", "Avenir";
     text-transform: uppercase;
     color: steelblue;
@@ -76,4 +77,13 @@ button:hover {
     letter-spacing: 1px;
     font-size: inherit;
     align-content: center;
+    vertical-align: middle;
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
 }
