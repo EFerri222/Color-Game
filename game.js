@@ -1,6 +1,6 @@
 // Global variables
 var squares = document.querySelectorAll(".square");
-var correctSquare = squares[Math.floor(Math.random() * squares.length)];
+var correctSquare;
 var rgbDisplay = document.querySelector("#rgb-display");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
@@ -27,8 +27,14 @@ function newColors() {
 
 newColors();
 
-// Display rgb value of the correct square in HTML
-rgbDisplay.textContent = correctSquare.style.backgroundColor;
+// Pick correct square
+function pickCorrectSquare() {
+    correctSquare = squares[Math.floor(Math.random() * squares.length)];
+    // Display rgb value of the correct square in HTML
+    rgbDisplay.textContent = correctSquare.style.backgroundColor;
+}
+
+pickCorrectSquare();
 
 function addClickEvents() {
     // For each square...
@@ -61,18 +67,11 @@ function addClickEvents() {
 
 addClickEvents();
 
-// Pick new correct square
-function newCorrectSquare() {
-    correctSquare = squares[Math.floor(Math.random() * squares.length)];
-    // Display rgb value of the correct square in HTML
-    rgbDisplay.textContent = correctSquare.style.backgroundColor;
-}
-
 // Reset colors and pick a new correct square
 function reset() {
     gameOver = false;
     newColors();
-    newCorrectSquare();
+    pickCorrectSquare();
     h1.style.backgroundColor = "steelblue";
     resetBtn.textContent = "New Colors";
     messageDisplay.textContent = "";
